@@ -21,7 +21,7 @@ class GameView(FlaskView):
             ])
 
     def get(self, id_):
-        game = db.session.query(Game).filter(Game.id == id_).first()
+        game = db.session.query(Game).filter(Game.id_ == id_).first()
         if not game:
             raise NotFound
 
@@ -57,7 +57,7 @@ class GameView(FlaskView):
         return self.get(game.id_)
 
     def delete(self, id_):
-        game = db.session.query(Game).filter(Game.id == id_).first()
+        game = db.session.query(Game).filter(Game.id_ == id_).first()
 
         if not game:
             raise NotFound
